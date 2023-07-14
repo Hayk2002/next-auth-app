@@ -47,7 +47,7 @@ export default function SignIn() {
     )
 }
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req } : { req: any }) {
     const session = await getSession({ req });
 
     if (session) {
