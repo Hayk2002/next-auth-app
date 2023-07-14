@@ -16,23 +16,31 @@ interface IUserCard {
 
 export default function UserCard({ email, image, name } : IUserCard) {
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                sx={{ height: 140 }}
-                image={image}
-                title="green iguana"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {name}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Typography variant="body2" color="text.primary">
-                    Email: {email}
-                </Typography>
-            </CardActions>
-            <Button onClick={() => signOut()}>Sign out</Button>
-        </Card>
+            <Card sx={{ maxWidth: 600 }}>
+                <CardMedia
+                    sx={{ height: 180, backgroundSize: "contain" }}
+                    image={image}
+                    title="green iguana"
+                />
+                <CardContent>
+                    <Typography variant='h4' gutterBottom>
+                        Welcome to profile
+                    </Typography>
+                    <Typography variant="h5" component="div">
+                        User info
+                    </Typography>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                        Name - {name}
+                    </Typography>
+                    <Typography variant="body1">
+                        Contacts:
+                        <br />
+                        Email - {email}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button onClick={() => signOut()}>Sign out</Button>
+                </CardActions>
+            </Card>
     )
 }
