@@ -5,11 +5,8 @@ import { useSession } from "next-auth/react";
 
 export default function Account() {
     const { data: session } = useSession();
-    const { user } : any = session;
 
-    if ("user" in session) {
-        return (
-            <UserCard email={user.email} image={user?.image} name={user?.name}/>
-        )
-    }
+    return (
+        <UserCard email={session?.user?.email} image={session?.user?.image} name={session?.user?.name}/>
+    )
 }

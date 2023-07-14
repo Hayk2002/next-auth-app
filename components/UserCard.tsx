@@ -8,13 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { signOut } from "next-auth/react";
 
-export interface IUserCard {
-    email: string
-    image: string
-    name: string
-}
-
-export default function UserCard({ email, image, name } : IUserCard) {
+export default function UserCard({ email, image, name } : any) {
     return (
             <Card sx={{ maxWidth: 600 }}>
                 <CardMedia
