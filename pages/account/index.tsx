@@ -7,7 +7,9 @@ export default function Account() {
     const { data: session } = useSession();
     const { user } : any = session;
 
-    return (
-        <UserCard email={user?.email} image={user?.image} name={user?.name}/>
-    )
+    if ("user" in session) {
+        return (
+            <UserCard email={user.email} image={user?.image} name={user?.name}/>
+        )
+    }
 }
