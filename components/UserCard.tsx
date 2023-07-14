@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { signOut } from "next-auth/react";
 
-interface IUserCard {
+export interface IUserCard {
     email: string
     image: string
     name: string
